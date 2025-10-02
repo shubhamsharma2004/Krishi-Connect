@@ -1,7 +1,7 @@
 // src/pages/Schemes.jsx
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/schemes.css";
+import "../styles/Schemes.css";
 
 const PAGE_SIZE = 10;
 const CACHE_KEY = "schemes_cache_v1";
