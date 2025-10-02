@@ -30,3 +30,40 @@
 
 /* remove the old blur layer entirely */
 .nav__blur{ display: none; }
+/* Default desktop nav */
+.nav__links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hamburger hidden on desktop */
+.nav__toggle {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+/* Mobile styles */
+@media (max-width: 880px) {
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: 60px; /* below navbar */
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  .nav__links.is-open {
+    display: flex;
+  }
+  .nav__toggle {
+    display: block;
+  }
+}
