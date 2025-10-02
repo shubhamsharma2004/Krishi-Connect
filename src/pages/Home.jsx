@@ -1,7 +1,7 @@
 // src/pages/Home.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/home.css";
+import "../styles/Home.css";
 
 export default function Home() {
   /* -------------------- Animated counters -------------------- */
