@@ -511,3 +511,152 @@
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
+/* -----------------------
+  RESPONSIVE LAYOUT HELPERS
+  Append this to the end of home.css
+------------------------*/
+
+/* Make container widths fluid */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+  box-sizing: border-box;
+}
+
+/* Fluid typography fallback for browsers that don't support clamp */
+html { font-size: 16px; }
+
+/* HERO adjustments */
+.hero {
+  padding: clamp(28px, 6vw, 96px) 12px;
+  min-height: clamp(60vh, 72vh, 92vh);
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Make overlay content more compact on small screens */
+.hero__overlay {
+  padding-inline: 8px;
+}
+.hero__title { 
+  font-size: clamp(28px, 6.2vw, 64px);
+  line-height: 1.05;
+}
+.hero__subtitle {
+  font-size: clamp(14px, 2.1vw, 18px);
+  margin-bottom: clamp(10px,2.5vw,18px);
+}
+
+/* Stats grid responsive (stack vertically on small devices) */
+.stats {
+  gap: 14px;
+  margin-top: 24px;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+}
+@media (max-width: 960px) {
+  .stats { grid-template-columns: repeat(2, minmax(160px, 1fr)); }
+}
+@media (max-width: 600px) {
+  .stats { grid-template-columns: 1fr; padding-inline: 12px; }
+  .stat { padding: 14px; border-radius: 16px; }
+  .stat__num { font-size: clamp(20px, 5.5vw, 28px); }
+}
+
+/* CAROUSEL / SERVICE CARDS */
+/* ensure horizontal scrolling works and cards shrink */
+.carousel { padding: 10px 8px; }
+.carousel__rail {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  gap: 18px;
+  padding-bottom: 8px;
+}
+.carousel__rail::-webkit-scrollbar { height: 10px; }
+.service-card {
+  scroll-snap-align: start;
+  min-width: 260px;   /* small card width for phones */
+  max-width: 340px;   /* desktop card width */
+  width: min(88vw, 340px);
+  padding: clamp(12px, 2.2vw, 20px);
+  border-radius: 16px;
+}
+
+/* navigation arrows hide on small screens (touch users can swipe) */
+@media (max-width: 880px) {
+  .carousel__arrow { display: none; }
+  .carousel__fade { display: none; }
+}
+
+/* make big cards centered on large screens */
+@media (min-width: 1200px) {
+  .carousel__rail { justify-content: flex-start; }
+}
+
+/* SERVICE CARD text sizes */
+.service-card__title { font-size: clamp(16px, 2.1vw, 20px); }
+.service-card__desc { font-size: clamp(13px, 1.6vw, 15px); }
+
+/* FEATURES GRID */
+.features__grid {
+  grid-template-columns: repeat(4, minmax(200px,1fr));
+  gap: 18px;
+}
+@media (max-width: 980px) { .features__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .features__grid { grid-template-columns: 1fr; } }
+
+/* CTA adjustments */
+.cta__wrap { padding: clamp(24px,3.8vw,48px); }
+.cta__title { font-size: clamp(20px, 4.2vw, 36px); }
+.cta__lead { font-size: clamp(13px, 2vw, 16px); }
+.cta__actions { gap: 12px; }
+@media (max-width: 560px) {
+  .cta__actions { flex-direction: column; align-items: stretch; }
+  .cta-btn { width: 100%; justify-content: center; }
+}
+
+/* MODAL responsive */
+.modal { padding: 20px; }
+.modal__card {
+  width: min(760px, 96vw);
+  max-width: 760px;
+  padding: clamp(18px, 2.6vw, 28px);
+  border-radius: 16px;
+}
+@media (max-width: 420px) {
+  .modal__card { width: 94vw; padding: 14px; border-radius: 12px; }
+  .modal__title { font-size: 18px; }
+  .modal__desc { font-size: 14px; }
+}
+
+/* NAVBAR responsiveness — collapse links into a basic stacked row on small screens */
+.nav__links { display:flex; gap:20px; align-items:center; }
+@media (max-width: 880px) {
+  .nav__links { display:none; } /* keep simple: add mobile menu when ready */
+  .nav__brand { gap:8px; }
+}
+
+/* BUTTONS: ensure touch targets */
+.btn, .cta-btn { min-height: 44px; padding-inline: 18px; }
+
+/* Accessibility & focus */
+a:focus, button:focus { outline: 3px solid rgba(16,185,129,0.14); outline-offset: 4px; }
+
+/* Reduce heavy shadows for small screens for performance */
+@media (max-width: 600px) {
+  .stat, .service-card, .cta__wrap { box-shadow: 0 8px 18px rgba(2,6,23,0.06); }
+}
+
+/* Utility: center content inside container on small screens */
+.center-wrap { max-width: 1100px; margin-inline:auto; padding-inline:16px; }
+
+/* Prevent horizontal overflow from accidental wide elements */
+html,body,#root { overflow-x: hidden; }
+
+/* Small fixes for very small devices */
+@media (max-width:360px) {
+  .hero__title { font-size: clamp(20px,8.8vw,28px); }
+  .service-card { min-width: 220px; }
+}
