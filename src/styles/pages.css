@@ -1,0 +1,8 @@
+.page-wrap{padding-bottom:60px}
+.page-hero{padding:80px 20px;text-align:center;color:#0b1320}
+.page-hero h1{margin:0;font-size:44px;line-height:1.1}
+.page-hero p{margin:8px auto 0;max-width:720px;color:#374151}
+.gradient-green{background:linear-gradient(160deg,#ecfdf5,#e6fffb)}
+.gradient-blue{background:linear-gradient(160deg,#eff6ff,#f0f9ff)}
+.gradient-teal{background:linear-gradient(160deg,#e6fffb,#effdf5)}
+.page-content{max-width:1100px;margin:20px auto;padding:0 20px} 

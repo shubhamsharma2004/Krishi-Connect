@@ -1,0 +1,88 @@
+/* src/styles/schemes.css - updated to job-like card style with centered header */
+:root{
+  --page-bg: #f6f8fa;
+  --card-bg: #fff;
+  --accent: #0e56a0;
+  --muted: #6b7280;
+  --shadow: 0 18px 40px rgba(16,24,40,0.06);
+  --radius: 14px;
+  --gap: 26px;
+  --container-width: 1100px;
+}
+
+/* page layout */
+body { background: var(--page-bg); font-family: Inter, system-ui, Arial, sans-serif; color: #0b1320; }
+.schemes-page { padding: 24px 12px 80px; min-height: 100vh; background: var(--page-bg); }
+
+.schemes-header { max-width: var(--container-width); margin: 8px auto 12px; padding: 0 12px; }
+.schemes-header__inner { text-align: center; margin: 0 auto; padding: 8px 12px; }
+.schemes-header__inner h1 { font-size: 36px; margin: 0; color: var(--accent); font-weight:800; }
+.schemes-header__inner .sub { color: var(--muted); margin-top:6px; }
+.schemes-header__inner .btn { margin-top: 10px; }
+
+/* controls */
+.schemes-controls { max-width: var(--container-width); margin: 12px auto; padding: 12px; display:flex; justify-content:space-between; gap:12px; align-items:center; }
+.search input { padding:10px 12px; border-radius:10px; border:1px solid #e6e9ee; min-width:320px; box-shadow:0 6px 18px rgba(16,24,40,0.03); }
+.small { color: var(--muted); }
+
+/* banner */
+.alert.banner { max-width: var(--container-width); margin:12px auto; padding:10px 14px; background:#fff7ed; color:#7f4516; border-radius:10px; border:1px solid #f5e0c9; }
+
+/* grid using job-like card style */
+.job-grid, .schemes-grid { max-width: var(--container-width); margin: 16px auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); padding: 0 12px; }
+@media (max-width: 1150px) { .job-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px) { .job-grid { grid-template-columns: 1fr; } }
+
+/* card base (reused styling similar to Jobs) */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(16,24,40,0.04);
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+  min-height: 260px;
+}
+
+/* top */
+.card-top { display:flex; align-items:center; gap:14px; }
+.mini-dot { width:36px; height:36px; border-radius:999px; background: #fafafa; border:none; box-shadow: 0 2px 6px rgba(16,24,40,0.03); }
+.card-title { margin:0; font-size: 18px; color: #0f2940; font-weight:700; }
+
+/* meta */
+.card-meta .company { font-weight:600; color:#243447; }
+.meta-line { color: var(--muted); font-size: 0.95rem; margin-top:6px; line-height:1.4; }
+
+/* desc */
+.card-desc { color:#374151; font-size: 0.95rem; line-height:1.5; margin-top:8px; flex:1; }
+
+/* action row */
+.card-actions { display:flex; gap:12px; align-items:center; margin-top:6px; }
+
+/* apply + details buttons */
+.apply-btn {
+  background: linear-gradient(135deg,#0b4b9a,#1976d2);
+  color:white; padding:10px 18px; border-radius: 999px;
+  font-weight:700; text-decoration:none; box-shadow: 0 12px 30px rgba(25,118,210,0.14);
+}
+.details-btn { background: transparent; border: none; color:#243447; font-weight:700; cursor:pointer; text-decoration: none; }
+
+/* posted */
+.posted { color:var(--muted); font-size:0.9rem; margin-top:8px; }
+
+/* pagination (job-like) */
+.pagination { max-width: var(--container-width); margin: 18px auto; display:flex; gap:8px; align-items:center; justify-content:center; padding: 0 12px; }
+.page-btn { padding:8px 12px; border-radius:8px; border:1px solid rgba(16,24,40,0.06); background:#fff; cursor:pointer; font-weight:600; }
+.page-btn[disabled] { opacity:0.5; cursor:not-allowed; }
+.page-info { color:var(--muted); font-weight:600; }
+
+/* empty state & footer */
+.empty { max-width: var(--container-width); margin:20px auto; padding:30px; border-radius:10px; border:2px dashed #e6e9ee; text-align:center; color:var(--muted) }
+.schemes-footer { max-width: var(--container-width); margin:24px auto 60px; padding: 12px; color: var(--muted); text-align:center; font-size:13px; }
+
+/* small screens */
+@media (max-width:720px){
+  .schemes-controls { flex-direction:column; align-items:flex-start; gap:10px; }
+}

@@ -1,0 +1,75 @@
+.services-section {
+  padding: 3rem 2rem;
+  background: #0f5132 url("/hero.png") no-repeat center/cover; /* bg + image */
+  text-align: center;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+.services-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Base Card */
+.card {
+  min-width: 260px;
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: #111;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* Tag badge */
+.tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: red;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 7px;
+  border-radius: 8px;
+}
+
+/* Icon */
+.icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 1rem;
+  background: white;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+/* Color variants */
+.card.aqua { background: linear-gradient(135deg, #63e6be, #22b8cf); color: #023e3e; }
+.card.green { background: linear-gradient(135deg, #b2f2bb, #40c057); color: #09320f; }
+.card.peach { background: linear-gradient(135deg, #ffd8a8, #ff6b6b); color: #3b0d0c; }
+.card.pink { background: linear-gradient(135deg, #fcc2d7, #f06595); color: #3b0215; }
+.card.lime { background: linear-gradient(135deg, #d8f5a2, #82c91e); color: #202c0f; }
+.card.violet { background: linear-gradient(135deg, #d0bfff, #845ef7); color: #1f133a; }

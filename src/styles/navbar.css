@@ -1,0 +1,32 @@
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255,255,255,0.94);        /* solid, no blur */
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,.04);
+}
+
+.nav__inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* optional compact-on-scroll look */
+.nav--scrolled .nav__inner{
+  padding: 10px 20px;
+}
+
+.nav__brand{display:flex;align-items:center;gap:10px;color:#111827;text-decoration:none;font-weight:800}
+.nav__logo{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#111827;color:#fff;font-weight:900}
+.nav__links{display:flex;gap:8px}
+.nav__link{padding:8px 14px;border-radius:999px;color:#111827;text-decoration:none;border:1px solid transparent;transition:all .2s}
+.nav__link:hover{background:#111827;color:#fff}
+.nav__link.is-active{background:#111827;color:#fff}
+
+/* remove the old blur layer entirely */
+.nav__blur{ display: none; }

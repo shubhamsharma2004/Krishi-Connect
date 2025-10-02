@@ -1,0 +1,169 @@
+/* Jobs.css - tile/card layout with pagination */
+:root{
+  --bg: #f6f9fb;
+  --card-bg: #fff;
+  --accent: #12243a;
+  --muted: #6b7280;
+  --primary: #1565c0;
+  --shadow: 0 10px 30px rgba(16,24,40,0.06);
+  --radius: 12px;
+}
+
+/* container */
+.jobs-wrapper {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 24px;
+  font-family: "Inter", "Segoe UI", system-ui, Arial, sans-serif;
+  background: var(--bg);
+}
+
+.jobs-header { text-align: center; margin-bottom: 22px; }
+.jobs-header h1 { color: var(--primary); font-size: 2.4rem; margin-bottom: 6px; }
+.jobs-header p { color: var(--muted); margin: 0; }
+
+/* grid: set 3 columns */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 tiles in row */
+  gap: 20px;
+  margin-top: 24px;
+}
+
+/* fallback for screens */
+@media (max-width: 1100px) {
+  .jobs-grid { grid-template-columns: repeat(2, 1fr); } /* 2 cols for medium screens */
+}
+@media (max-width: 700px) {
+  .jobs-grid { grid-template-columns: 1fr; } /* 1 col for small screens */
+}
+
+/* Tile / Card */
+.job-tile {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(16,24,40,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 360px;
+}
+
+/* top row with small icon and title */
+.tile-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f3f4f6, #ffffff);
+  border: none;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+  cursor: default;
+  color: rgba(0,0,0,0.4);
+}
+
+.tile-title {
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+/* meta and company */
+.tile-meta { color: var(--muted); font-size: 0.95rem; }
+.tile-company { display:block; font-weight:600; color: #243447; margin-bottom: 6px; }
+.tile-sub { color: var(--muted); font-size: 0.88rem; }
+
+/* description text */
+.tile-desc {
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-top: 6px;
+  flex: 1; /* grow to push actions to bottom */
+}
+
+/* small meta row */
+.tile-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  color: #374151;
+  font-size: 0.92rem;
+}
+
+/* actions row */
+.tile-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* buttons */
+.btn {
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
+  box-shadow: 0 6px 18px rgba(25,118,210,0.15);
+}
+
+.btn-outline {
+  background: white;
+  color: #1f2937;
+  border: 1px solid rgba(16,24,40,0.06);
+}
+
+/* posted on */
+.posted { color: var(--muted); font-size: 0.9rem; margin-top: 6px; }
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.page-btn, .page-number {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(16,24,40,0.06);
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.page-btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+.page-number.active {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: #fff;
+  border-color: transparent;
+}
+
+.ellipsis { padding: 8px 6px; color: var(--muted); }
+
+/* loading / error */
+.jobs-loading, .jobs-error, .no-jobs { text-align: center; padding: 30px 0; color: var(--muted); }

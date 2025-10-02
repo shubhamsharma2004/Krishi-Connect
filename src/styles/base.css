@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1f2937;background:#f7f8fa}
+.app-root{min-height:100%;display:flex;flex-direction:column}
+.page-loader{padding:64px;text-align:center}
+.not-found{padding:96px;text-align:center}
+
+
+/* simple reveal */
+[data-reveal]{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.reveal--on{opacity:1;transform:translateY(0)}
